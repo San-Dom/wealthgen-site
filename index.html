@@ -9,9 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #020408;
-    --deep: #060c14;
-    --surface: #0a1220;
+    --black: #060d1f;
+    --deep: #0a1528;
+    --surface: #0e1d35;
     --border: rgba(255,255,255,0.06);
     --border-bright: rgba(255,255,255,0.12);
     --emerald: #10b981;
@@ -28,6 +28,13 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { background: var(--black); color: var(--text-primary); font-family: var(--body); overflow-x: hidden; }
+  body::after {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: radial-gradient(rgba(99,102,241,0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, black 40%, transparent 100%);
+  }
 
   /* NAV */
   nav {
@@ -153,12 +160,12 @@
   .showcase-desc { font-size:13px; color:var(--text-secondary); line-height:1.6; }
 
   /* AGENTS */
-  .agents-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-top:60px; }
+  .agents-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:60px; }
   .agent-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 14px; text-align:center; transition:all 0.2s; }
   .agent-card:hover { border-color:var(--border-bright); transform:translateY(-2px); }
-  .agent-emoji { font-size:22px; display:block; margin-bottom:8px; }
-  .agent-name { font-family:var(--mono); font-size:9px; font-weight:700; color:var(--text-primary); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:5px; }
-  .agent-role { font-size:11px; color:var(--text-dim); line-height:1.4; }
+  .agent-emoji { font-size:28px; display:block; margin-bottom:10px; }
+  .agent-name { font-family:var(--mono); font-size:11px; font-weight:700; color:var(--text-primary); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:7px; }
+  .agent-role { font-size:13px; color:var(--text-secondary); line-height:1.5; }
 
   /* PRICING */
   .pricing-note { font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.08em; margin-top:8px; }
@@ -232,13 +239,17 @@
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <div class="hero-badge">Now Available — Full Release</div>
+    <div class="hero-badge">🔬 AI-Powered Stock Research Platform</div>
     <h1 class="hero-title">WEALTH<span class="g">-</span>GEN<span class="d">-</span>CORE</h1>
     <p class="hero-version">VERSION 3.0</p>
     <p class="hero-tagline">
-      <strong>Your private stock intelligence system.</strong><br>
+      <strong>Your private stock research system.</strong><br>
       26 AI agents scan 141 candidates across 17 industries — surfacing the highest-conviction opportunities before the market catches on.
     </p>
+    <div style="display:inline-block;margin-bottom:32px;padding:12px 20px;border:1px solid rgba(245,158,11,0.3);background:rgba(245,158,11,0.07);border-radius:10px;max-width:580px;">
+      <p style="font-family:var(--mono);font-size:11px;color:#f59e0b;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">🔬 Research Tool — Not Financial Advice</p>
+      <p style="font-size:12px;color:rgba(245,158,11,0.7);line-height:1.6;">Wealth-Gen Core is an AI-powered stock <strong style="color:#f59e0b;">research</strong> tool only. Nothing here constitutes financial advice, investment recommendations, or solicitation to buy or sell any security. Always consult a licensed financial advisor before making investment decisions.</p>
+    </div>
     <div class="hero-actions">
       <a href="#pricing" class="btn-primary">View Plans →</a>
       <a href="#how-it-works" class="btn-secondary">See How It Works</a>
@@ -438,20 +449,14 @@
     <p class="section-sub">Each agent is a specialist. Together they cover every angle — from macro conditions to competitive intelligence to legal risk.</p>
   </div>
   <div class="agents-grid reveal">
-    <div class="agent-card"><span class="agent-emoji">📈</span><div class="agent-name">Growth</div><p class="agent-role">Revenue trajectory & expansion signals</p></div>
-    <div class="agent-card"><span class="agent-emoji">🛡️</span><div class="agent-name">Moat</div><p class="agent-role">Defensibility & competitive durability</p></div>
-    <div class="agent-card"><span class="agent-emoji">🧠</span><div class="agent-name">Leadership</div><p class="agent-role">Management quality & talent signals</p></div>
-    <div class="agent-card"><span class="agent-emoji">⚡</span><div class="agent-name">Disruption</div><p class="agent-role">Category disruption potential</p></div>
-    <div class="agent-card"><span class="agent-emoji">⚖️</span><div class="agent-name">Legal & IP</div><p class="agent-role">Regulatory risk & IP strength</p></div>
-    <div class="agent-card"><span class="agent-emoji">🕵️</span><div class="agent-name">Intelligence</div><p class="agent-role">Competitor mapping & threats</p></div>
-    <div class="agent-card"><span class="agent-emoji">🔮</span><div class="agent-name">Macro Intel</div><p class="agent-role">Geopolitical & macro positioning</p></div>
-    <div class="agent-card"><span class="agent-emoji">📊</span><div class="agent-name">Economic</div><p class="agent-role">Rate & inflation exposure</p></div>
-    <div class="agent-card"><span class="agent-emoji">📜</span><div class="agent-name">Historical</div><p class="agent-role">Pattern recognition from history</p></div>
-    <div class="agent-card"><span class="agent-emoji">🎯</span><div class="agent-name">Forecaster</div><p class="agent-role">Bull / base / bear price scenarios</p></div>
-    <div class="agent-card"><span class="agent-emoji">💰</span><div class="agent-name">Allocator</div><p class="agent-role">Capital weighting & position sizing</p></div>
-    <div class="agent-card"><span class="agent-emoji">🧾</span><div class="agent-name">Accountant</div><p class="agent-role">Portfolio P&L & performance tracking</p></div>
+    <div class="agent-card"><span class="agent-emoji">🔍</span><div class="agent-name">Market Intelligence</div><p class="agent-role">Real-time signal detection across all candidates</p></div>
+    <div class="agent-card"><span class="agent-emoji">📈</span><div class="agent-name">Growth Analysis</div><p class="agent-role">Revenue trajectory & expansion potential</p></div>
+    <div class="agent-card"><span class="agent-emoji">🌍</span><div class="agent-name">Macro Conditions</div><p class="agent-role">Geopolitical & economic environment scoring</p></div>
+    <div class="agent-card"><span class="agent-emoji">⚖️</span><div class="agent-name">Regulatory Watch</div><p class="agent-role">Legal risk & compliance exposure analysis</p></div>
+    <div class="agent-card"><span class="agent-emoji">🎯</span><div class="agent-name">Price Forecasting</div><p class="agent-role">Bull, base & bear scenario modelling</p></div>
+    <div class="agent-card"><span class="agent-emoji">🕵️</span><div class="agent-name">Competitive Intel</div><p class="agent-role">Threat mapping & market positioning</p></div>
   </div>
-  <p style="text-align:center;font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:20px;letter-spacing:0.1em;">+ 14 MORE SPECIALIST AGENTS RUNNING IN PARALLEL</p>
+  <p style="text-align:center;font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:20px;letter-spacing:0.1em;">+ 20 MORE SPECIALIST AGENTS RUNNING IN PARALLEL</p>
 </div>
 
 <!-- PRICING -->
@@ -461,6 +466,7 @@
     <h2 class="section-title">Start free.<br>Scale when ready.</h2>
     <p class="section-sub">Every tier includes the core scan engine. Unlock deeper intelligence as your conviction grows.</p>
     <p class="pricing-note">All prices in USD · Billed monthly · Cancel anytime</p>
+    <p class="pricing-note" style="margin-top:6px;color:#f59e0b;">⚠️ Requires your own API keys (Finnhub + AI provider) — setup guide included with every plan</p>
   </div>
   <div class="pricing-grid reveal">
 
@@ -468,10 +474,10 @@
       <div class="pricing-tier">Free</div>
       <div class="pricing-price">$0<span class="currency-note">USD / month</span></div>
       <div class="pricing-cadence">Forever free</div>
-      <div class="pricing-scans">3 scans / week</div>
+      <div class="pricing-scans">1 scan / week</div>
       <div class="pricing-divider"></div>
       <ul class="pricing-features">
-        <li>Top 3 picks per scan</li>
+        <li>3 picks per scan</li>
         <li>Basic stock cards</li>
         <li class="locked">Conviction scores</li>
         <li class="locked">Capital allocation</li>
@@ -502,7 +508,7 @@
 
     <div class="pricing-card featured">
       <div class="pricing-tier">Pro</div>
-      <div class="pricing-price"><sup>$</sup>69<span class="currency-note">USD / month</span></div>
+      <div class="pricing-price"><sup>$</sup>59<span class="currency-note">USD / month</span></div>
       <div class="pricing-cadence">Billed monthly</div>
       <div class="pricing-scans">3 scans / day</div>
       <div class="pricing-divider"></div>
@@ -520,17 +526,17 @@
 
     <div class="pricing-card">
       <div class="pricing-tier">Institutional</div>
-      <div class="pricing-price"><sup>$</sup>399<span class="currency-note">USD / month</span></div>
+      <div class="pricing-price"><sup>$</sup>179<span class="currency-note">USD / month</span></div>
       <div class="pricing-cadence">Billed monthly</div>
-      <div class="pricing-scans">5 scans / day</div>
+      <div class="pricing-scans">Unlimited scans</div>
       <div class="pricing-divider"></div>
       <ul class="pricing-features">
         <li>Everything in Pro</li>
+        <li>Unlimited scans</li>
         <li>Unlimited AI Chat</li>
         <li>PDF export</li>
         <li>Full scan history</li>
         <li>Mission Control panel</li>
-        <li>Priority support</li>
         <li>All future features</li>
       </ul>
       <a href="#" class="pricing-btn">Get Institutional</a>
@@ -541,7 +547,7 @@
 
 <footer>
   <div class="footer-logo">WEALTH<span>-</span>GEN<span>-</span>CORE</div>
-  <p class="footer-copy">© 2026 Wealth-Gen Core. All rights reserved.</p>
+  <p class="footer-copy">© 2026 Wealth-Gen Core. All rights reserved.<br><span style="font-size:11px;color:var(--text-dim);">For research purposes only. Not financial advice.</span></p>
   <ul class="footer-links">
     <li><a href="#features">Features</a></li>
     <li><a href="#pricing">Pricing</a></li>
