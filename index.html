@@ -499,11 +499,218 @@
   }
   .footer-copy { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
 
+  /* ── FOR YOU SECTION ── */
+  .for-you-banner {
+    position: relative; z-index: 1;
+    background: linear-gradient(135deg, rgba(16,185,129,0.06) 0%, rgba(99,102,241,0.06) 100%);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 80px 48px; text-align: center;
+  }
+  .for-you-eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--emerald); margin-bottom: 20px; display: block;
+  }
+  .for-you-title {
+    font-family: var(--display); font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900; letter-spacing: -0.02em; line-height: 1.05;
+    color: var(--text-primary); margin-bottom: 24px;
+  }
+  .for-you-title em { color: var(--emerald); font-style: normal; }
+  .for-you-body {
+    font-size: 19px; color: var(--text-body); line-height: 1.8;
+    max-width: 680px; margin: 0 auto 48px;
+  }
+  .for-you-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; max-width: 960px; margin: 0 auto;
+  }
+  .for-you-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 28px 24px; text-align: left;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .for-you-card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+  .for-you-card-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+  .for-you-card-title {
+    font-family: var(--display); font-size: 16px; font-weight: 700;
+    color: var(--text-primary); margin-bottom: 8px;
+  }
+  .for-you-card-desc { font-size: 14px; color: var(--text-body); line-height: 1.7; }
+
+  /* ── SHOW OUR WORK ── */
+  .show-work {
+    position: relative; z-index: 1;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 80px 48px;
+  }
+  .show-work-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .show-work-label {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--emerald); margin-bottom: 16px; display: block;
+  }
+  .show-work-title {
+    font-family: var(--display); font-size: clamp(30px, 4vw, 48px);
+    font-weight: 900; letter-spacing: -0.02em; line-height: 1.1;
+    color: var(--text-primary); margin-bottom: 20px;
+  }
+  .show-work-body { font-size: 17px; color: var(--text-body); line-height: 1.8; margin-bottom: 28px; }
+  .show-work-points { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .show-work-points li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 15px; color: var(--text-body); line-height: 1.6;
+  }
+  .show-work-points li::before {
+    content: '✓'; color: var(--emerald); font-weight: 700;
+    font-size: 14px; flex-shrink: 0; margin-top: 1px;
+  }
+  .show-work-visual {
+    background: linear-gradient(135deg, #091422, #0d1e30);
+    border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px; display: flex; flex-direction: column; gap: 12px;
+  }
+  .swv-header {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--emerald); margin-bottom: 4px;
+  }
+  .swv-pick {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px;
+  }
+  .swv-pick-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .swv-sym { font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--text-primary); }
+  .swv-score { font-family: var(--mono); font-size: 13px; color: var(--emerald); font-weight: 700; }
+  .swv-bar-wrap { height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; margin-bottom: 10px; }
+  .swv-bar { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--emerald), rgba(16,185,129,0.3)); }
+  .swv-verdict { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+  .swv-tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+  .swv-tag {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em;
+    padding: 3px 8px; border-radius: 4px; text-transform: uppercase;
+    background: var(--indigo-dim); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.2);
+  }
+  .swv-tag.g { background: var(--emerald-dim); color: var(--emerald-light); border-color: rgba(16,185,129,0.2); }
+
+  /* ── EXPECT SECTION ── */
+  .expect-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px;
+  }
+  .expect-col {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 36px 32px;
+  }
+  .expect-col.yes { border-color: rgba(16,185,129,0.25); }
+  .expect-col.no  { border-color: rgba(248,113,113,0.2); }
+  .expect-col-header {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--display); font-size: 20px; font-weight: 900;
+    color: var(--text-primary); margin-bottom: 28px; padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .expect-col-header span { font-size: 24px; }
+  .expect-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .expect-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 15px; color: var(--text-body); line-height: 1.65;
+  }
+  .expect-list li .check { color: var(--emerald); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .expect-list li .cross { color: #f87171; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── INDUSTRIES GRID ── */
+  .industries-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 10px; margin-top: 48px;
+  }
+  .industry-badge {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px;
+    display: flex; align-items: center; gap: 10px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .industry-badge:hover { border-color: var(--border-bright); background: var(--bg-card-hover); }
+  .industry-badge-icon { font-size: 20px; flex-shrink: 0; }
+  .industry-badge-name { font-size: 13px; color: var(--text-body); font-weight: 500; line-height: 1.3; }
+  .industries-footer {
+    margin-top: 28px; text-align: center;
+    font-family: var(--mono); font-size: 12px; color: var(--text-secondary);
+    letter-spacing: 0.1em; display: flex; align-items: center; justify-content: center; gap: 12px;
+  }
+  .industries-footer::before, .industries-footer::after {
+    content: ''; flex: 1; max-width: 120px; height: 1px; background: var(--border);
+  }
+
+  /* ── ROADMAP TEASER ── */
+  .roadmap-section {
+    position: relative; z-index: 1;
+    background: linear-gradient(135deg, rgba(99,102,241,0.05) 0%, rgba(16,185,129,0.04) 100%);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 80px 48px; text-align: center;
+  }
+  .roadmap-inner { max-width: 1100px; margin: 0 auto; }
+  .roadmap-markets {
+    display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin: 48px 0 56px;
+  }
+  .roadmap-market {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px 28px; min-width: 140px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .roadmap-market:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+  .roadmap-market.live { border-color: rgba(16,185,129,0.3); }
+  .roadmap-flag { font-size: 36px; }
+  .roadmap-market-name {
+    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-primary);
+  }
+  .roadmap-status-live {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+    color: var(--emerald); background: var(--emerald-dim);
+    border: 1px solid rgba(16,185,129,0.25); padding: 3px 10px; border-radius: 100px;
+  }
+  .roadmap-status-soon {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+    color: #a5b4fc; background: var(--indigo-dim);
+    border: 1px solid rgba(99,102,241,0.25); padding: 3px 10px; border-radius: 100px;
+  }
+  .roadmap-items {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; text-align: left;
+  }
+  .roadmap-item {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px 20px;
+  }
+  .roadmap-item-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; display: block;
+  }
+  .roadmap-item-title {
+    font-family: var(--display); font-size: 16px; font-weight: 700;
+    color: var(--text-primary); margin-bottom: 8px;
+  }
+  .roadmap-item-desc { font-size: 13px; color: var(--text-body); line-height: 1.65; }
+  .roadmap-vote {
+    margin-top: 40px; font-size: 15px; color: var(--text-secondary); line-height: 1.7;
+  }
+  .roadmap-vote strong { color: var(--text-body); }
+
   /* ── REVEAL ── */
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .for-you-cards { grid-template-columns: 1fr; }
+    .show-work-inner { grid-template-columns: 1fr; gap: 40px; }
+    .expect-grid { grid-template-columns: 1fr; }
+    .industries-grid { grid-template-columns: repeat(2, 1fr); }
+    .roadmap-items { grid-template-columns: 1fr; }
+    .for-you-banner { padding: 60px 24px; }
+    .show-work { padding: 60px 24px; }
+    .roadmap-section { padding: 60px 24px; }
+  }
+
+  /* ── RESPONSIVE (base) ── */
   @media (max-width: 960px) {
     :root { --section-pad: 72px 24px; }
     nav { padding: 0 24px; }
@@ -531,6 +738,7 @@
 <nav role="navigation" aria-label="Main navigation">
   <a href="#" class="nav-logo" aria-label="Wealth-Gen-Core home">WEALTH<span>-</span>GEN<span>-</span>CORE</a>
   <ul class="nav-links" role="list">
+    <li><a href="#for-you-title">Who It's For</a></li>
     <li><a href="#features">Features</a></li>
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#pricing">Pricing</a></li>
@@ -547,8 +755,8 @@
     <h1 class="hero-title" id="hero-title">WEALTH<span class="g">-</span>GEN<span class="d">-</span>CORE</h1>
     <p class="hero-version" aria-label="Version 3.0">VERSION 3.0</p>
     <p class="hero-tagline">
-      <strong>Institutional-Grade Research. Without the $25,000 Annual Price Tag.</strong><br>
-      26 AI agents scan 141 candidates across 17 industries — surfacing the highest-conviction opportunities before the market catches on.
+      <strong>You used to need a six-figure research budget and a team of analysts to invest like this. Now you don't.</strong><br>
+      Wealth-Gen Core puts institutional-grade research in the hands of everyday investors — with hard evidence behind every single pick.
     </p>
     <div class="disclaimer-box" role="note" aria-label="Important disclaimer">
       <span class="disclaimer-badge">⚠️ Research Tool — Not Financial Advice</span>
@@ -597,6 +805,81 @@
   <div class="stat-item"><span class="stat-value">6</span><span class="stat-label">Top Picks Per Scan</span></div>
 </div>
 
+<!-- FOR EVERYDAY INVESTORS -->
+<section class="for-you-banner" aria-labelledby="for-you-title">
+  <span class="for-you-eyebrow">Built For You — Not Wall Street</span>
+  <h2 class="for-you-title" id="for-you-title">This tool was built to<br><em>level the playing field.</em></h2>
+  <p class="for-you-body">
+    Every day, ordinary people make investment decisions with no real research behind them. They guess. They follow tips. They lose money. Meanwhile, institutions spend tens of thousands of dollars a year on research tools that give them an unfair edge.<br><br>
+    We think that's wrong. So we built the same quality of research — and put it in your hands.
+  </p>
+  <div class="for-you-cards reveal">
+    <div class="for-you-card">
+      <span class="for-you-card-icon">📈</span>
+      <h3 class="for-you-card-title">Self-Directed Investors</h3>
+      <p class="for-you-card-desc">You manage your own portfolio and make your own calls. Wealth-Gen Core gives you the research depth to back every decision with hard evidence — not gut feel.</p>
+    </div>
+    <div class="for-you-card">
+      <span class="for-you-card-icon">🇨🇦</span>
+      <h3 class="for-you-card-title">Canadian Investors</h3>
+      <p class="for-you-card-desc">Most research tools ignore the TSX and TSXV entirely. We don't. Full CAD/USD conversion, Canadian candidates, and local market coverage built in from day one.</p>
+    </div>
+    <div class="for-you-card">
+      <span class="for-you-card-icon">🎯</span>
+      <h3 class="for-you-card-title">Evidence-Based Investors</h3>
+      <p class="for-you-card-desc">You don't want someone to tell you what to buy. You want the evidence so you can decide for yourself. Every pick comes with the full reasoning behind it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHOW OUR WORK -->
+<section class="show-work" aria-labelledby="show-work-title">
+  <div class="show-work-inner">
+    <div>
+      <span class="show-work-label">Hard Evidence. Every Time.</span>
+      <h2 class="show-work-title" id="show-work-title">We don't just tell you what to buy.<br>We show you exactly why.</h2>
+      <p class="show-work-body">Every pick Wealth-Gen Core surfaces comes with a full evidence trail. Not a number. Not a rating. A complete breakdown of why that stock ranks where it does — so you can make an informed decision, not a blind one.</p>
+      <ul class="show-work-points">
+        <li>Conviction score built from 26 independent agent verdicts</li>
+        <li>Narrative analysis — written reasoning, not just numbers</li>
+        <li>Bull, base, and bear price targets with probability weighting</li>
+        <li>Capital allocation recommendation based on conviction strength</li>
+        <li>Industry regime score — is the sector working for or against you?</li>
+        <li>Geopolitical and macro risk exposure per stock</li>
+      </ul>
+    </div>
+    <div class="show-work-visual" aria-hidden="true">
+      <div class="swv-header">🏆 Top Pick — Full Evidence</div>
+      <div class="swv-pick">
+        <div class="swv-pick-top">
+          <span class="swv-sym">ON</span>
+          <span class="swv-score">93 / 100</span>
+        </div>
+        <div class="swv-bar-wrap"><div class="swv-bar" style="width:93%"></div></div>
+        <p class="swv-verdict">Strong semiconductor positioning with expanding margins. Macro regime favourable. Geopolitical exposure low. Competitive moat widening across automotive and industrial segments.</p>
+        <div class="swv-tags">
+          <span class="swv-tag g">High Conviction</span>
+          <span class="swv-tag g">Recovery Regime</span>
+          <span class="swv-tag">23% Allocation</span>
+          <span class="swv-tag">Bull $145 · Base $97 · Bear $57</span>
+        </div>
+      </div>
+      <div class="swv-pick" style="opacity:0.6;">
+        <div class="swv-pick-top">
+          <span class="swv-sym">ACMR</span>
+          <span class="swv-score">78 / 100</span>
+        </div>
+        <div class="swv-bar-wrap"><div class="swv-bar" style="width:78%"></div></div>
+        <p class="swv-verdict">Semiconductor equipment exposure with strong order book. Tariff risk partially priced in. Growth trajectory intact.</p>
+        <div class="swv-tags">
+          <span class="swv-tag g">Medium Conviction</span>
+          <span class="swv-tag">18% Allocation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURES -->
 <div class="wrap" id="features">
   <div class="reveal">
@@ -641,6 +924,72 @@
       <p class="feature-desc">Set price and conviction score thresholds on any stock. Get notified the moment a candidate crosses your criteria — never miss a setup.</p>
       <span class="ftag">Pro +</span>
     </article>
+  </div>
+</div>
+
+<!-- 17 INDUSTRIES -->
+<div class="wrap bordered" aria-labelledby="industries-title">
+  <div class="reveal">
+    <span class="section-label">Coverage</span>
+    <h2 class="section-title" id="industries-title">17 industries.<br>Scanned simultaneously. Every time.</h2>
+    <p class="section-sub">Most tools cover the obvious sectors. We go deeper — across 17 industries, 141 hand-curated candidates, and every scan fires across all of them at once.</p>
+  </div>
+  <div class="industries-grid reveal">
+    <div class="industry-badge"><span class="industry-badge-icon">💾</span><span class="industry-badge-name">Semiconductor & Hardware</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">⚡</span><span class="industry-badge-name">Energy Storage & Grid AI</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">⚛️</span><span class="industry-badge-name">Quantum Computing</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🤖</span><span class="industry-badge-name">Robotics & Autonomous Systems</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🧬</span><span class="industry-badge-name">Health-Tech & Bioinformatics</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🧠</span><span class="industry-badge-name">General AI & ML</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🌱</span><span class="industry-badge-name">Synthetic Biology & Age Tech</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🚀</span><span class="industry-badge-name">Space Economy Infrastructure</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🌾</span><span class="industry-badge-name">Precision Agriculture</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🌊</span><span class="industry-badge-name">Deep-Sea Resource Extraction</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🧩</span><span class="industry-badge-name">Neuromorphic Computing</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🎓</span><span class="industry-badge-name">Academic SOTA Trends</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🔐</span><span class="industry-badge-name">Cybersecurity</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🛡️</span><span class="industry-badge-name">Defence Tech</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🌍</span><span class="industry-badge-name">Climate Fintech</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">🏗️</span><span class="industry-badge-name">Digital Infrastructure</span></div>
+    <div class="industry-badge"><span class="industry-badge-icon">📱</span><span class="industry-badge-name">Consumer AI</span></div>
+  </div>
+  <p class="industries-footer">More industries coming post-launch — community voted</p>
+</div>
+
+<!-- WHAT TO EXPECT -->
+<div class="wrap bordered" aria-labelledby="expect-title">
+  <div class="reveal">
+    <span class="section-label">Honest By Design</span>
+    <h2 class="section-title" id="expect-title">What to expect.<br>What not to expect.</h2>
+    <p class="section-sub">We'd rather you know exactly what this tool does and doesn't do — so you can use it with full confidence.</p>
+  </div>
+  <div class="expect-grid reveal">
+    <div class="expect-col yes">
+      <div class="expect-col-header"><span>✅</span> What You Will Get</div>
+      <ul class="expect-list">
+        <li><span class="check">✓</span> A full market scan across 17 industries in under 15 minutes</li>
+        <li><span class="check">✓</span> 6 high-conviction stock picks with scores, allocation, and forecasts</li>
+        <li><span class="check">✓</span> Hard evidence behind every single pick — not just a number</li>
+        <li><span class="check">✓</span> Live prices with real-time CAD/USD conversion</li>
+        <li><span class="check">✓</span> Macro regime detection — know what environment you're investing in</li>
+        <li><span class="check">✓</span> Full Canadian market coverage — TSX and TSXV included</li>
+        <li><span class="check">✓</span> 100% local — your data never leaves your machine</li>
+        <li><span class="check">✓</span> Research that arms your judgment — not replaces it</li>
+      </ul>
+    </div>
+    <div class="expect-col no">
+      <div class="expect-col-header"><span>🚫</span> What This Is Not</div>
+      <ul class="expect-list">
+        <li><span class="cross">✗</span> Not financial advice — never has been, never will be</li>
+        <li><span class="cross">✗</span> Not a get-rich-quick tool — there is no such thing</li>
+        <li><span class="cross">✗</span> Not a guarantee of returns — no tool can promise that</li>
+        <li><span class="cross">✗</span> Not a replacement for your own judgment — it arms it</li>
+        <li><span class="cross">✗</span> Not a market prediction engine — it identifies conviction, not certainty</li>
+        <li><span class="cross">✗</span> Not a black box — every pick comes with full reasoning</li>
+        <li><span class="cross">✗</span> Not a substitute for a licensed financial advisor</li>
+        <li><span class="cross">✗</span> Not cloud-based — nothing is stored on our servers</li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -769,16 +1118,16 @@
 <div class="wrap bordered" aria-labelledby="compare-title">
   <div class="reveal">
     <span class="section-label">Why Wealth-Gen Core</span>
-    <h2 class="section-title" id="compare-title">Institutional-grade research.<br>Without the $25,000 price tag.</h2>
-    <p class="section-sub">Bloomberg Terminal and FactSet are the industry standard. Wealth-Gen Core delivers the same depth of AI-driven research — at a fraction of the cost.</p>
+    <h2 class="section-title" id="compare-title">Institutional-grade research.<br>Finally priced for real people.</h2>
+    <p class="section-sub">The tools professionals use to research stocks cost tens of thousands of dollars a year. We built the same depth of AI-driven research and priced it for everyday investors. Do the math yourself.</p>
   </div>
   <div class="reveal" style="margin-top:56px;overflow-x:auto;">
     <table style="width:100%;border-collapse:collapse;font-size:15px;" aria-label="Pricing comparison table">
       <thead>
         <tr>
           <th style="text-align:left;padding:16px 20px;font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);border-bottom:1px solid var(--border-bright);"></th>
-          <th style="text-align:center;padding:16px 20px;font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);border-bottom:1px solid var(--border-bright);">Bloomberg<br>Terminal</th>
-          <th style="text-align:center;padding:16px 20px;font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);border-bottom:1px solid var(--border-bright);">FactSet</th>
+          <th style="text-align:center;padding:16px 20px;font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);border-bottom:1px solid var(--border-bright);">Leading<br>Terminal A</th>
+          <th style="text-align:center;padding:16px 20px;font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);border-bottom:1px solid var(--border-bright);">Leading<br>Terminal B</th>
           <th style="text-align:center;padding:16px 20px;font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--emerald);border-bottom:1px solid rgba(16,185,129,0.4);background:rgba(16,185,129,0.05);border-radius:8px 8px 0 0;">Wealth-Gen Core<br><span style="color:var(--emerald);font-size:10px;">Institutional</span></th>
         </tr>
       </thead>
@@ -821,7 +1170,7 @@
         </tr>
       </tbody>
     </table>
-    <p style="text-align:center;margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:0.08em;">~92% cheaper than Bloomberg Terminal at the Institutional tier.</p>
+    <p style="text-align:center;margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:0.08em;">The numbers speak for themselves. We'll let you do the research on what the professionals pay.</p>
   </div>
 </div>
 
@@ -829,8 +1178,8 @@
 <div class="wrap bordered" id="pricing" aria-labelledby="pricing-title">
   <div class="reveal">
     <span class="section-label">Pricing</span>
-    <h2 class="section-title" id="pricing-title">Start free.<br>Scale when ready.</h2>
-    <p class="section-sub">Every tier includes the core scan engine. Unlock deeper intelligence as your conviction grows.</p>
+    <h2 class="section-title" id="pricing-title">Institutional research.<br>Finally priced for real people.</h2>
+    <p class="section-sub">Institutional research tools used to cost tens of thousands a year. We think that's wrong. So we built it ourselves — and priced it for everyday investors.</p>
     <div class="pricing-meta">
       <span class="pricing-note">All prices in USD · Billed monthly · Cancel anytime</span>
     </div>
@@ -913,6 +1262,80 @@
 </div>
 
 </main>
+
+<!-- ROADMAP TEASER -->
+<section class="roadmap-section" aria-labelledby="roadmap-title">
+  <div class="roadmap-inner">
+    <div class="reveal">
+      <span class="section-label" style="text-align:center;display:block;">What's Coming</span>
+      <h2 class="for-you-title" id="roadmap-title" style="margin-bottom:16px;">We're just getting started.</h2>
+      <p style="font-size:18px;color:var(--text-body);max-width:600px;margin:0 auto;line-height:1.8;">
+        Version 3.0 covers North America. The roadmap covers the world. Here's where Wealth-Gen Core is going.
+      </p>
+    </div>
+
+    <!-- Markets -->
+    <div class="reveal">
+      <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--emerald);margin-bottom:24px;margin-top:0;">Markets & Exchanges</p>
+      <div class="roadmap-markets">
+        <div class="roadmap-market live">
+          <span class="roadmap-flag">🇨🇦</span>
+          <span class="roadmap-market-name">Canada</span>
+          <span style="font-family:var(--mono);font-size:9px;color:var(--text-muted);">TSX · TSXV</span>
+          <span class="roadmap-status-live">● Live Now</span>
+        </div>
+        <div class="roadmap-market live">
+          <span class="roadmap-flag">🇺🇸</span>
+          <span class="roadmap-market-name">USA</span>
+          <span style="font-family:var(--mono);font-size:9px;color:var(--text-muted);">NYSE · NASDAQ</span>
+          <span class="roadmap-status-live">● Live Now</span>
+        </div>
+        <div class="roadmap-market">
+          <span class="roadmap-flag">🇬🇧</span>
+          <span class="roadmap-market-name">United Kingdom</span>
+          <span style="font-family:var(--mono);font-size:9px;color:var(--text-muted);">LSE</span>
+          <span class="roadmap-status-soon">Coming Soon</span>
+        </div>
+        <div class="roadmap-market">
+          <span class="roadmap-flag">🇮🇳</span>
+          <span class="roadmap-market-name">India</span>
+          <span style="font-family:var(--mono);font-size:9px;color:var(--text-muted);">NSE · BSE</span>
+          <span class="roadmap-status-soon">Coming Soon</span>
+        </div>
+        <div class="roadmap-market">
+          <span class="roadmap-flag">🇦🇺</span>
+          <span class="roadmap-market-name">Australia</span>
+          <span style="font-family:var(--mono);font-size:9px;color:var(--text-muted);">ASX</span>
+          <span class="roadmap-status-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Platform roadmap -->
+    <div class="roadmap-items reveal">
+      <div class="roadmap-item">
+        <span class="roadmap-item-label">Industries</span>
+        <h3 class="roadmap-item-title">17 Now. More Coming.</h3>
+        <p class="roadmap-item-desc">We're expanding industry coverage post-launch based on community demand. Every new industry means more candidates, more signals, and more conviction. Vote for what you want next.</p>
+      </div>
+      <div class="roadmap-item">
+        <span class="roadmap-item-label">Platform</span>
+        <h3 class="roadmap-item-title">Full Backend & User Accounts</h3>
+        <p class="roadmap-item-desc">As the community grows, we're building a full backend with user accounts, cloud sync, shared research, and a community conviction dashboard. Planned for 100+ paid users.</p>
+      </div>
+      <div class="roadmap-item">
+        <span class="roadmap-item-label">Intelligence</span>
+        <h3 class="roadmap-item-title">Deeper Agent Layer</h3>
+        <p class="roadmap-item-desc">More specialist agents, deeper fundamentals integration, earnings analysis, and insider activity signals are all on the roadmap — each one adding another layer of evidence to every pick.</p>
+      </div>
+    </div>
+
+    <p class="roadmap-vote reveal">
+      <strong>Have a market or feature you want to see?</strong><br>
+      Every piece of feedback shapes what we build next. Reach us at <a href="mailto:WealthGenCore@proton.me" style="color:var(--emerald);text-decoration:none;">WealthGenCore@proton.me</a>
+    </p>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer role="contentinfo">
