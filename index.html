@@ -390,8 +390,12 @@
   /* ── PRICING ── */
   .pricing-meta { margin-top: 12px; }
   .pricing-note {
-    font-family: var(--mono); font-size: 12px; color: var(--text-secondary);
-    letter-spacing: 0.08em; display: block; margin-top: 6px;
+    font-family: var(--mono); font-size: 17px; font-weight: 700;
+    letter-spacing: 0.08em; display: inline-block; margin-top: 20px;
+    background: #EAB308; color: #dc2626;
+    padding: 12px 28px; border-radius: 10px;
+    border: 2px solid #ca8a04;
+    box-shadow: 0 4px 16px rgba(234,179,8,0.25);
   }
   .pricing-api-note {
     display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;
@@ -614,7 +618,7 @@
   .expect-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
   .expect-list li {
     display: flex; align-items: flex-start; gap: 12px;
-    font-size: 15px; color: var(--text-body); line-height: 1.65;
+    font-size: 19px; color: var(--text-body); line-height: 1.65;
   }
   .expect-list li .check { color: var(--emerald); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
   .expect-list li .cross { color: #f87171; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
@@ -804,6 +808,10 @@
     footer { padding: 36px 24px; }
     .footer-top { flex-direction: column; gap: 24px; }
   }
+
+  /* ── COPY PROTECTION ── */
+  body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+  a, button, input, textarea { -webkit-user-select: auto; -moz-user-select: auto; user-select: auto; }
 </style>
 </head>
 <body>
@@ -917,12 +925,12 @@
       <h2 class="show-work-title" id="show-work-title">We don't just tell you what to buy.<br>We show you exactly why.</h2>
       <p class="show-work-body">Every pick Wealth-Gen Core surfaces comes with a full evidence trail. Not a number. Not a rating. A complete breakdown of why that stock ranks where it does — so you can make an informed decision, not a blind one.</p>
       <ul class="show-work-points">
-        <li>Conviction score built from multiple independent agent verdicts</li>
-        <li>Narrative analysis — written reasoning, not just numbers</li>
-        <li>Bull, base, and bear price targets with probability weighting</li>
-        <li>Capital allocation recommendation based on conviction strength</li>
-        <li>Industry regime score — is the sector working for or against you?</li>
-        <li>Geopolitical and macro risk exposure per stock</li>
+        <li>Every pick arrives with a verdict — not just a number</li>
+        <li>You see the reasoning, not just the conclusion</li>
+        <li>Price targets across multiple scenarios — so you know the range of outcomes</li>
+        <li>Capital guidance built into every result — not left to guesswork</li>
+        <li>Market conditions factored in — the environment matters as much as the stock</li>
+        <li>Risk exposure surfaced automatically — so nothing catches you off guard</li>
       </ul>
     </div>
     <div class="show-work-visual" aria-hidden="true">
@@ -1016,21 +1024,11 @@
     <div class="industry-badge"><span class="industry-badge-icon">⚡</span><span class="industry-badge-name">Energy Storage & Grid AI</span></div>
     <div class="industry-badge"><span class="industry-badge-icon">⚛️</span><span class="industry-badge-name">Quantum Computing</span></div>
     <div class="industry-badge"><span class="industry-badge-icon">🤖</span><span class="industry-badge-name">Robotics & Autonomous Systems</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🧬</span><span class="industry-badge-name">Health-Tech & Bioinformatics</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🧠</span><span class="industry-badge-name">General AI & ML</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🌱</span><span class="industry-badge-name">Synthetic Biology & Age Tech</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🚀</span><span class="industry-badge-name">Space Economy Infrastructure</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🌾</span><span class="industry-badge-name">Precision Agriculture</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🌊</span><span class="industry-badge-name">Deep-Sea Resource Extraction</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🧩</span><span class="industry-badge-name">Neuromorphic Computing</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🎓</span><span class="industry-badge-name">Academic SOTA Trends</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🔐</span><span class="industry-badge-name">Cybersecurity</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🛡️</span><span class="industry-badge-name">Defence Tech</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🌍</span><span class="industry-badge-name">Climate Fintech</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">🏗️</span><span class="industry-badge-name">Digital Infrastructure</span></div>
-    <div class="industry-badge"><span class="industry-badge-icon">📱</span><span class="industry-badge-name">Consumer AI</span></div>
+    <div class="industry-badge" style="background:rgba(99,102,241,0.08);border-color:rgba(99,102,241,0.3);justify-content:center;grid-column:span 4;">
+      <span style="font-family:var(--mono);font-size:13px;color:#a5b4fc;letter-spacing:0.1em;font-weight:700;">+ 13 MORE INDUSTRIES COVERED — SPANNING EVERY HIGH-GROWTH SECTOR</span>
+    </div>
   </div>
-  <p class="industries-footer">More industries coming post-launch — community voted</p>
+  <p class="industries-footer">Full industry list revealed inside the app</p>
 </div>
 
 <!-- WHAT TO EXPECT -->
@@ -1174,7 +1172,7 @@
 </div>
 
 <!-- AGENTS -->
-<div class="wrap bordered glass-section" aria-labelledby="agents-title">
+<div class="wrap bordered" aria-labelledby="agents-title">
   <div class="reveal">
     <span class="section-label">The Intelligence Layer</span>
     <h2 class="section-title" id="agents-title">Many agents.<br>One verdict.</h2>
@@ -1390,10 +1388,19 @@
 
     <!-- Platform roadmap -->
     <div class="roadmap-items reveal">
-      <div class="roadmap-item">
-        <span class="roadmap-item-label">Industries</span>
-        <h3 class="roadmap-item-title">17 Now. More Coming.</h3>
-        <p class="roadmap-item-desc">We're expanding industry coverage post-launch based on community demand. Every new industry means more candidates, more signals, and more conviction. Vote for what you want next.</p>
+      <div class="roadmap-item" style="border-color:rgba(16,185,129,0.4);background:rgba(16,185,129,0.05);grid-column:span 3;text-align:center;padding:40px 32px;">
+        <span class="roadmap-item-label" style="color:var(--emerald);font-size:13px;letter-spacing:0.2em;">Industries — Right Now</span>
+        <h3 style="font-family:var(--display);font-size:clamp(48px,6vw,80px);font-weight:900;letter-spacing:-0.03em;color:var(--text-primary);margin:12px 0 8px;line-height:1;">17</h3>
+        <p style="font-family:var(--mono);font-size:14px;letter-spacing:0.15em;text-transform:uppercase;color:var(--emerald);margin-bottom:20px;">Industries Covered Today</p>
+        <div style="width:60px;height:2px;background:var(--emerald);margin:0 auto 24px;border-radius:2px;opacity:0.5;"></div>
+        <p style="font-size:17px;color:var(--text-body);line-height:1.8;max-width:600px;margin:0 auto 28px;">Spanning the highest-conviction sectors in the market today — from cutting-edge technology to emerging industries most tools don't even cover yet.</p>
+        <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(234,179,8,0.12);border:1px solid rgba(234,179,8,0.4);border-radius:12px;padding:14px 28px;">
+          <span style="font-size:22px;">🚀</span>
+          <div style="text-align:left;">
+            <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#fbbf24;margin-bottom:4px;">Expanding Post-Launch</p>
+            <p style="font-size:15px;color:var(--text-body);margin:0;line-height:1.5;">More industries are coming — driven entirely by community demand. <strong style="color:var(--text-primary);">You vote. We build.</strong></p>
+          </div>
+        </div>
       </div>
       <div class="roadmap-item">
         <span class="roadmap-item-label">Platform</span>
@@ -1476,6 +1483,14 @@
       el.querySelector('.contact-email-link').textContent =
         el.dataset.user + '@' + el.dataset.domain;
     }
+  });
+
+  // Copy protection — prevent text selection and copying
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('selectstart', e => {
+    const tag = e.target.tagName;
+    if (!['A','BUTTON','INPUT','TEXTAREA'].includes(tag)) e.preventDefault();
   });
 
   // Glass sections — ensure links inside are still clickable
