@@ -125,15 +125,15 @@
   .hero-content { position: relative; z-index: 1; max-width: 820px; }
 
   .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: var(--mono); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--emerald-light); border: 1px solid rgba(16,185,129,0.5);
-    background: rgba(16,185,129,0.12); padding: 10px 22px; border-radius: 100px;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #ffffff; border: 2px solid rgba(16,185,129,0.8);
+    background: rgba(16,185,129,0.22); padding: 14px 28px; border-radius: 100px;
     margin-bottom: 40px; animation: fadeUp 0.6s ease both;
-    font-weight: 700;
+    font-weight: 700; box-shadow: 0 0 24px rgba(16,185,129,0.2);
   }
   .hero-badge::before {
-    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    content: ''; width: 9px; height: 9px; border-radius: 50%;
     background: var(--emerald); animation: blink 2s infinite;
   }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
@@ -1069,7 +1069,7 @@
 </div>
 
 <!-- HOW IT WORKS -->
-<div class="wrap bordered glass-section" id="how-it-works">
+<div class="wrap bordered" id="how-it-works">
   <div class="reveal">
     <span class="section-label">How It Works</span>
     <h2 class="section-title">Raw data to ranked<br>conviction in minutes.</h2>
@@ -1175,7 +1175,7 @@
 <div class="wrap bordered" aria-labelledby="agents-title">
   <div class="reveal">
     <span class="section-label">The Intelligence Layer</span>
-    <h2 class="section-title" id="agents-title">Many agents.<br>One verdict.</h2>
+    <h2 class="section-title" id="agents-title">20+ Specialized Agents.<br>One Verdict.</h2>
     <p class="section-sub">Each agent is a specialist. Together they cover every angle — from macro conditions to competitive intelligence to legal risk.</p>
   </div>
   <div class="agents-grid reveal" role="list">
@@ -1255,7 +1255,7 @@
     <span class="section-label">Pricing</span>
     <h2 class="section-title" id="pricing-title">Institutional research.<br>Finally priced for real people.</h2>
     <p class="section-sub">Institutional research tools used to cost tens of thousands a year. I think that's wrong. So I built it myself — and priced it for everyday investors.</p>
-    <div class="pricing-meta">
+    <div class="pricing-meta" style="text-align:center;">
       <span class="pricing-note">All prices in USD · Billed monthly · Cancel anytime</span>
     </div>
   </div>
@@ -1394,23 +1394,25 @@
         <p style="font-family:var(--mono);font-size:14px;letter-spacing:0.15em;text-transform:uppercase;color:var(--emerald);margin-bottom:20px;">Industries Covered Today</p>
         <div style="width:60px;height:2px;background:var(--emerald);margin:0 auto 24px;border-radius:2px;opacity:0.5;"></div>
         <p style="font-size:17px;color:var(--text-body);line-height:1.8;max-width:600px;margin:0 auto 28px;">Spanning the highest-conviction sectors in the market today — from cutting-edge technology to emerging industries most tools don't even cover yet.</p>
-        <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(234,179,8,0.12);border:1px solid rgba(234,179,8,0.4);border-radius:12px;padding:14px 28px;">
-          <span style="font-size:22px;">🚀</span>
-          <div style="text-align:left;">
-            <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#fbbf24;margin-bottom:4px;">Expanding Post-Launch</p>
-            <p style="font-size:15px;color:var(--text-body);margin:0;line-height:1.5;">More industries are coming — driven entirely by community demand. <strong style="color:var(--text-primary);">You vote. We build.</strong></p>
+        <div style="display:flex;justify-content:center;margin-bottom:0;">
+          <div style="display:inline-flex;align-items:center;gap:14px;background:rgba(234,179,8,0.15);border:2px solid rgba(234,179,8,0.6);border-radius:14px;padding:20px 36px;box-shadow:0 0 32px rgba(234,179,8,0.15);">
+            <span style="font-size:28px;">🚀</span>
+            <div style="text-align:center;">
+              <p style="font-family:var(--mono);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#fbbf24;margin-bottom:6px;font-weight:700;">Expanding Post-Launch</p>
+              <p style="font-size:17px;color:var(--text-primary);margin:0;line-height:1.5;font-weight:600;">More industries are coming — driven entirely by community demand.<br><strong style="color:#fbbf24;">You vote. We build.</strong></p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="roadmap-item">
-        <span class="roadmap-item-label">Platform</span>
-        <h3 class="roadmap-item-title">Full Backend & User Accounts</h3>
-        <p class="roadmap-item-desc">As the community grows, we're building a full backend with user accounts, cloud sync, shared research, and a community conviction dashboard. Planned for 100+ paid users.</p>
+      <div class="roadmap-item" style="text-align:center;">
+        <span class="roadmap-item-label" style="text-align:center;display:block;">Platform</span>
+        <h3 class="roadmap-item-title" style="text-align:center;">Full Backend & User Accounts</h3>
+        <p class="roadmap-item-desc" style="text-align:center;">As the community grows, we're building a full backend with user accounts, cloud sync, shared research, and a community conviction dashboard. Planned for 100+ paid users.</p>
       </div>
-      <div class="roadmap-item">
-        <span class="roadmap-item-label">Intelligence</span>
-        <h3 class="roadmap-item-title">Deeper Agent Layer</h3>
-        <p class="roadmap-item-desc">More specialist agents, deeper fundamentals integration, earnings analysis, and insider activity signals are all on the roadmap — each one adding another layer of evidence to every pick.</p>
+      <div class="roadmap-item" style="text-align:center;">
+        <span class="roadmap-item-label" style="text-align:center;display:block;">Intelligence</span>
+        <h3 class="roadmap-item-title" style="text-align:center;">Deeper Agent Layer</h3>
+        <p class="roadmap-item-desc" style="text-align:center;">More specialist agents, deeper fundamentals integration, earnings analysis, and insider activity signals are all on the roadmap — each one adding another layer of evidence to every pick.</p>
       </div>
     </div>
 
