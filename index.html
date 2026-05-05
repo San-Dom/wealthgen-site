@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Wealth-Gen Core — AI-powered stock research platform. 26 agents, 141 candidates, 17 industries. For research purposes only.">
+<meta name="description" content="Wealth-Gen Core — AI-powered stock research for everyday investors. Institutional-grade analysis. Runs locally. Your data never leaves your machine.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; frame-ancestors 'none';">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="no-referrer">
 <title>WEALTH-GEN-CORE — AI Stock Research Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -695,9 +698,83 @@
   }
   .roadmap-vote strong { color: var(--text-body); }
 
-  /* ── REVEAL ── */
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  /* ── GLASS EFFECT ── */
+  .glass-section {
+    position: relative; overflow: hidden;
+  }
+  .glass-section::after {
+    content: '';
+    position: absolute; inset: 0; z-index: 2;
+    background: linear-gradient(
+      135deg,
+      rgba(15,37,74,0.45) 0%,
+      rgba(22,46,88,0.38) 50%,
+      rgba(15,37,74,0.42) 100%
+    );
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    pointer-events: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .glass-section .glass-label {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3; pointer-events: none;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: rgba(255,255,255,0.25);
+    white-space: nowrap;
+  }
+
+  /* ── CONTACT SECTION ── */
+  .contact-section {
+    position: relative; z-index: 1;
+    background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(99,102,241,0.06) 100%);
+    border-top: 1px solid rgba(16,185,129,0.2);
+    border-bottom: 1px solid rgba(16,185,129,0.2);
+    padding: 80px 48px; text-align: center;
+  }
+  .contact-inner { max-width: 640px; margin: 0 auto; }
+  .contact-label {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--emerald); margin-bottom: 16px; display: block;
+  }
+  .contact-title {
+    font-family: var(--display); font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900; letter-spacing: -0.02em; line-height: 1.1;
+    color: var(--text-primary); margin-bottom: 20px;
+  }
+  .contact-body {
+    font-size: 18px; color: var(--text-body); line-height: 1.8; margin-bottom: 36px;
+  }
+  .contact-email-wrap {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.35);
+    border-radius: 16px; padding: 20px 36px;
+    transition: all 0.2s;
+  }
+  .contact-email-wrap:hover {
+    background: rgba(16,185,129,0.14);
+    border-color: rgba(16,185,129,0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(16,185,129,0.15);
+  }
+  .contact-email-icon { font-size: 28px; }
+  .contact-email-link {
+    font-family: var(--mono); font-size: 22px; font-weight: 700;
+    color: var(--emerald-light); text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .contact-email-link:hover { color: var(--emerald); }
+  .contact-note {
+    margin-top: 20px; font-size: 14px; color: var(--text-secondary); line-height: 1.7;
+  }
+
+  @media (max-width: 960px) {
+    .contact-section { padding: 60px 24px; }
+    .contact-email-link { font-size: 16px; }
+    .contact-email-wrap { padding: 16px 24px; }
+  }
 
   @media (max-width: 960px) {
     .for-you-cards { grid-template-columns: 1fr; }
@@ -799,10 +876,10 @@
 
 <!-- STATS -->
 <div class="stats-strip" role="region" aria-label="Platform statistics">
-  <div class="stat-item"><span class="stat-value">26<span class="stat-unit"> AI</span></span><span class="stat-label">Agents Deployed</span></div>
-  <div class="stat-item"><span class="stat-value">141</span><span class="stat-label">Candidate Stocks</span></div>
   <div class="stat-item"><span class="stat-value">17</span><span class="stat-label">Industries Covered</span></div>
   <div class="stat-item"><span class="stat-value">6</span><span class="stat-label">Top Picks Per Scan</span></div>
+  <div class="stat-item"><span class="stat-value">100<span class="stat-unit">%</span></span><span class="stat-label">Local — Your Data Stays Yours</span></div>
+  <div class="stat-item"><span class="stat-value">$0</span><span class="stat-label">To Get Started — Forever Free</span></div>
 </div>
 
 <!-- FOR EVERYDAY INVESTORS -->
@@ -840,7 +917,7 @@
       <h2 class="show-work-title" id="show-work-title">We don't just tell you what to buy.<br>We show you exactly why.</h2>
       <p class="show-work-body">Every pick Wealth-Gen Core surfaces comes with a full evidence trail. Not a number. Not a rating. A complete breakdown of why that stock ranks where it does — so you can make an informed decision, not a blind one.</p>
       <ul class="show-work-points">
-        <li>Conviction score built from 26 independent agent verdicts</li>
+        <li>Conviction score built from multiple independent agent verdicts</li>
         <li>Narrative analysis — written reasoning, not just numbers</li>
         <li>Bull, base, and bear price targets with probability weighting</li>
         <li>Capital allocation recommendation based on conviction strength</li>
@@ -891,13 +968,13 @@
     <article class="feature-card" role="listitem">
       <span class="feature-icon" aria-hidden="true">⚡</span>
       <h3 class="feature-title">Deep Scan Engine</h3>
-      <p class="feature-desc">26 agents fire across 141 candidates simultaneously — scoring growth, defensibility, leadership, disruption, legal risk, and competitive positioning in minutes.</p>
+      <p class="feature-desc">A multi-agent AI system fires across a curated universe of stocks simultaneously — scoring across every dimension that matters, in minutes.</p>
       <span class="ftag g">All Tiers</span>
     </article>
     <article class="feature-card" role="listitem">
       <span class="feature-icon" aria-hidden="true">🔬</span>
       <h3 class="feature-title">Individual Deep-Dive</h3>
-      <p class="feature-desc">Run all 20 specialist agents on any ticker on demand — not just the 141 candidates. Any stock, anywhere, analysed in full with narrative verdicts.</p>
+      <p class="feature-desc">Run a full specialist agent analysis on any ticker on demand — not just our covered universe. Any stock, anywhere, analysed in full with narrative verdicts.</p>
       <span class="ftag">Pro +</span>
     </article>
     <article class="feature-card" role="listitem">
@@ -994,17 +1071,17 @@
 </div>
 
 <!-- HOW IT WORKS -->
-<div class="wrap bordered" id="how-it-works">
+<div class="wrap bordered glass-section" id="how-it-works">
   <div class="reveal">
     <span class="section-label">How It Works</span>
     <h2 class="section-title">Raw data to ranked<br>conviction in minutes.</h2>
-    <p class="section-sub">A five-phase intelligence pipeline fires on every scan — automatically, every time you click.</p>
+    <p class="section-sub">A multi-phase intelligence pipeline fires on every scan — automatically, every time you click.</p>
   </div>
   <div class="steps reveal" role="list">
     <div class="step" role="listitem">
       <div class="step-num" aria-hidden="true">01</div>
       <h3 class="step-title">News & Signal Harvest</h3>
-      <p class="step-desc">Live news, price feeds, and sector signals are pulled and classified across all 141 candidates.</p>
+      <p class="step-desc">Live news, price feeds, and sector signals are pulled and classified across our full stock universe.</p>
     </div>
     <div class="step" role="listitem">
       <div class="step-num" aria-hidden="true">02</div>
@@ -1014,7 +1091,7 @@
     <div class="step" role="listitem">
       <div class="step-num" aria-hidden="true">03</div>
       <h3 class="step-title">Deep Agent Analysis</h3>
-      <p class="step-desc">20 specialist agents assess growth, moats, leadership, disruption, legal risk, and competitive threats per stock.</p>
+      <p class="step-desc">A specialist agent layer assesses growth, moats, leadership, disruption, legal risk, and competitive threats per stock.</p>
     </div>
     <div class="step" role="listitem">
       <div class="step-num" aria-hidden="true">04</div>
@@ -1048,7 +1125,7 @@
       </div>
       <div class="showcase-info">
         <h3 class="showcase-title">Top 6 Conviction Picks — Ranked & Allocated</h3>
-        <p class="showcase-desc">Every scan surfaces the 6 highest-conviction opportunities from 141 candidates. Each pick includes a full narrative verdict, conviction score, capital allocation, and price targets across bull, base, and bear scenarios.</p>
+        <p class="showcase-desc">Every scan surfaces the 6 highest-conviction opportunities from our curated stock universe. Each pick includes a full narrative verdict, conviction score, capital allocation, and price targets across bull, base, and bear scenarios.</p>
       </div>
     </div>
     <div class="showcase-card">
@@ -1066,7 +1143,7 @@
         </div>
       </div>
       <div class="showcase-info">
-        <h3 class="showcase-title">20-Agent Deep-Dive</h3>
+        <h3 class="showcase-title">Full Specialist Deep-Dive</h3>
         <p class="showcase-desc">Every specialist agent fires and delivers a narrative verdict — not just a number. Works on any stock, on demand.</p>
       </div>
     </div>
@@ -1097,10 +1174,10 @@
 </div>
 
 <!-- AGENTS -->
-<div class="wrap bordered" aria-labelledby="agents-title">
+<div class="wrap bordered glass-section" aria-labelledby="agents-title">
   <div class="reveal">
     <span class="section-label">The Intelligence Layer</span>
-    <h2 class="section-title" id="agents-title">26 agents.<br>One verdict.</h2>
+    <h2 class="section-title" id="agents-title">Many agents.<br>One verdict.</h2>
     <p class="section-sub">Each agent is a specialist. Together they cover every angle — from macro conditions to competitive intelligence to legal risk.</p>
   </div>
   <div class="agents-grid reveal" role="list">
@@ -1111,7 +1188,7 @@
     <article class="agent-card" role="listitem"><span class="agent-emoji" aria-hidden="true">🎯</span><h3 class="agent-name">Price Forecasting</h3><p class="agent-role">Bull, base and bear scenario modelling</p></article>
     <article class="agent-card" role="listitem"><span class="agent-emoji" aria-hidden="true">🕵️</span><h3 class="agent-name">Competitive Intel</h3><p class="agent-role">Threat mapping and market positioning</p></article>
   </div>
-  <p class="agents-more">+ 20 MORE SPECIALIST AGENTS RUNNING IN PARALLEL</p>
+  <p class="agents-more">+ MORE SPECIALIST AGENTS RUNNING IN PARALLEL</p>
 </div>
 
 <!-- COMPETITIVE POSITIONING -->
@@ -1179,7 +1256,7 @@
   <div class="reveal">
     <span class="section-label">Pricing</span>
     <h2 class="section-title" id="pricing-title">Institutional research.<br>Finally priced for real people.</h2>
-    <p class="section-sub">Institutional research tools used to cost tens of thousands a year. We think that's wrong. So we built it ourselves — and priced it for everyday investors.</p>
+    <p class="section-sub">Institutional research tools used to cost tens of thousands a year. I think that's wrong. So I built it myself — and priced it for everyday investors.</p>
     <div class="pricing-meta">
       <span class="pricing-note">All prices in USD · Billed monthly · Cancel anytime</span>
     </div>
@@ -1219,7 +1296,7 @@
         <li class="locked">AI Chat</li>
         <li class="locked">Alerts &amp; Portfolio</li>
       </ul>
-      <a href="https://buy.stripe.com/cNi7sK1Vpe2JdVI5eQ0kE00" class="pricing-btn" aria-label="Get the Basic plan for 19 dollars per month" target="_blank">Get Basic →</a>
+      <a href="https://buy.stripe.com/cNi7sK1Vpe2JdVI5eQ0kE00" class="pricing-btn" aria-label="Get the Basic plan for 19 dollars per month" target="_blank" rel="noopener noreferrer">Get Basic →</a>
     </article>
 
     <article class="pricing-card featured" role="listitem">
@@ -1237,7 +1314,7 @@
         <li>Event Alpha Scanner</li>
         <li class="locked">PDF export</li>
       </ul>
-      <a href="https://buy.stripe.com/7sYcN41VpbUBeZM8r20kE01" class="pricing-btn primary" aria-label="Get the Pro plan for 59 dollars per month" target="_blank">Get Pro →</a>
+      <a href="https://buy.stripe.com/7sYcN41VpbUBeZM8r20kE01" class="pricing-btn primary" aria-label="Get the Pro plan for 59 dollars per month" target="_blank" rel="noopener noreferrer">Get Pro →</a>
     </article>
 
     <article class="pricing-card" role="listitem">
@@ -1255,7 +1332,7 @@
         <li>Mission Control panel</li>
         <li>All future features</li>
       </ul>
-      <a href="https://buy.stripe.com/14AfZg2Zt0bT4l8aza0kE02" class="pricing-btn" aria-label="Get the Institutional plan for 179 dollars per month" target="_blank">Get Institutional →</a>
+      <a href="https://buy.stripe.com/14AfZg2Zt0bT4l8aza0kE02" class="pricing-btn" aria-label="Get the Institutional plan for 179 dollars per month" target="_blank" rel="noopener noreferrer">Get Institutional →</a>
     </article>
 
   </div>
@@ -1332,8 +1409,24 @@
 
     <p class="roadmap-vote reveal">
       <strong>Have a market or feature you want to see?</strong><br>
-      Every piece of feedback shapes what we build next. Reach us at <a href="mailto:WealthGenCore@proton.me" style="color:var(--emerald);text-decoration:none;">WealthGenCore@proton.me</a>
+      Every piece of feedback shapes what we build next. Reach us at <a href="#" class="email-link" data-user="WealthGenCore" data-domain="proton.me" style="color:var(--emerald);text-decoration:none;" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain">WealthGenCore [at] proton.me</a>
     </p>
+  </div>
+</section>
+
+<!-- CONTACT US -->
+<section class="contact-section" aria-labelledby="contact-title">
+  <div class="contact-inner reveal">
+    <span class="contact-label">Get In Touch</span>
+    <h2 class="contact-title" id="contact-title">Contact Us</h2>
+    <p class="contact-body">
+      Have a question, a feature request, or want to discuss a market expansion? Every message is read personally. We'd love to hear from you.
+    </p>
+    <a class="contact-email-wrap" href="#" data-user="WealthGenCore" data-domain="proton.me" onclick="this.href='mailto:'+this.dataset.user+'@'+this.dataset.domain" rel="noopener noreferrer">
+      <span class="contact-email-icon">✉️</span>
+      <span class="contact-email-link">WealthGenCore@proton.me</span>
+    </a>
+    <p class="contact-note">We typically respond within 24 hours · Feedback shapes what we build next</p>
   </div>
 </section>
 
@@ -1371,6 +1464,25 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
     document.querySelector('.ticker-track').style.animation = 'none';
   }
+
+  // Email obfuscation — assemble mailto on click so bots can't scrape it
+  document.querySelectorAll('[data-user][data-domain]').forEach(el => {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'mailto:' + this.dataset.user + '@' + this.dataset.domain;
+    });
+    // Also update visible text on contact email to show full address
+    if (el.querySelector('.contact-email-link')) {
+      el.querySelector('.contact-email-link').textContent =
+        el.dataset.user + '@' + el.dataset.domain;
+    }
+  });
+
+  // Glass sections — ensure links inside are still clickable
+  document.querySelectorAll('.glass-section a, .glass-section button').forEach(el => {
+    el.style.position = 'relative';
+    el.style.zIndex = '3';
+  });
 </script>
 </body>
 </html>
