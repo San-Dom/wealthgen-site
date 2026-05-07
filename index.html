@@ -110,6 +110,12 @@
     background: var(--emerald); color: #000;
     outline: 2px solid var(--emerald-light); outline-offset: 2px;
   }
+  .nav-signin {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+    color: var(--text-secondary); text-decoration: none; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-signin:hover, .nav-signin:focus { color: var(--text-primary); }
 
   /* ── HERO ── */
   .hero {
@@ -809,6 +815,77 @@
     .footer-top { flex-direction: column; gap: 24px; }
   }
 
+  /* ── PRIVACY SECTION ── */
+  .privacy-section {
+    position: relative; z-index: 1;
+    background: #070f1a;
+    border-top: 1px solid rgba(16,185,129,0.15);
+    border-bottom: 1px solid rgba(16,185,129,0.15);
+    padding: 100px 48px;
+    overflow: hidden;
+  }
+  .privacy-section::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(16,185,129,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 20% 100%, rgba(99,102,241,0.04) 0%, transparent 60%);
+  }
+  .privacy-inner {
+    position: relative; z-index: 1;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .privacy-eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--emerald);
+    display: block; text-align: center; margin-bottom: 24px;
+  }
+  .privacy-headline {
+    font-family: var(--display);
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 900; letter-spacing: -0.025em; line-height: 1.0;
+    color: var(--text-primary); text-align: center;
+    margin-bottom: 20px;
+  }
+  .privacy-headline em { color: var(--emerald); font-style: normal; }
+  .privacy-subline {
+    font-size: 18px; color: var(--text-body); line-height: 1.8;
+    text-align: center; max-width: 580px; margin: 0 auto 72px;
+  }
+  .privacy-promises {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 2px; background: rgba(16,185,129,0.08);
+    border: 1px solid rgba(16,185,129,0.15);
+    border-radius: 20px; overflow: hidden;
+  }
+  .privacy-promise {
+    background: #0a1520;
+    padding: 44px 40px;
+    transition: background 0.2s;
+  }
+  .privacy-promise:hover { background: #0d1c2a; }
+  .privacy-promise-number {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    color: rgba(16,185,129,0.4); margin-bottom: 20px; display: block;
+  }
+  .privacy-promise-text {
+    font-family: var(--display); font-size: clamp(17px, 1.8vw, 21px);
+    font-weight: 700; color: var(--text-primary); line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+  .privacy-promise-text strong { color: var(--emerald); font-weight: 800; }
+  .privacy-closing {
+    text-align: center; margin-top: 56px;
+    font-family: var(--mono); font-size: 13px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-secondary); line-height: 1.8;
+  }
+  .privacy-closing strong { color: var(--text-primary); display: block; font-size: 15px; margin-bottom: 6px; }
+
+  @media (max-width: 960px) {
+    .privacy-section { padding: 60px 24px; }
+    .privacy-promises { grid-template-columns: 1fr; }
+  }
+
   /* ── COPY PROTECTION ── */
   body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
   a, button, input, textarea { -webkit-user-select: auto; -moz-user-select: auto; user-select: auto; }
@@ -828,7 +905,10 @@
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#pricing">Pricing</a></li>
   </ul>
-  <a href="https://github.com/San-Dom/wealthgen-site/releases/download/v3.1/WealthGenCore_Beta_v3.1_20260330.zip" class="nav-cta" aria-label="Download Wealth-Gen Core free">⬇ Download Free</a>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <a href="https://billing.stripe.com/p/login/cNi7sK1Vpe2JdVI5eQ0kE00" class="nav-signin" target="_blank" rel="noopener noreferrer" aria-label="Sign in to your account">Already have an account?</a>
+    <a href="https://buy.stripe.com/dRmfZgdE7bUBbNA7mY0kE03" class="nav-cta" aria-label="Download Wealth-Gen Core free" target="_blank" rel="noopener noreferrer">⬇ Get Started Free</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -850,7 +930,7 @@
       </p>
     </div>
     <div class="hero-actions">
-      <a href="https://github.com/San-Dom/wealthgen-site/releases/download/v3.1/WealthGenCore_Beta_v3.1_20260330.zip" class="btn-primary" aria-label="Download Wealth-Gen Core free beta">⬇ Download Free — No Credit Card Required</a>
+      <a href="https://buy.stripe.com/dRmfZgdE7bUBbNA7mY0kE03" class="btn-primary" aria-label="Get started free" target="_blank" rel="noopener noreferrer">⬇ Get Started Free</a>
       <a href="#how-it-works" class="btn-secondary" aria-label="Learn how it works">See How It Works</a>
     </div>
   </div>
@@ -884,9 +964,12 @@
 
 <!-- STATS -->
 <div class="stats-strip" role="region" aria-label="Platform statistics">
+  <div class="stat-item" style="background:rgba(16,185,129,0.04);border-right:1px solid rgba(16,185,129,0.2);">
+    <span class="stat-value" style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;font-family:var(--mono);color:var(--emerald);">Runs On Your Machine</span>
+    <span class="stat-label" style="margin-top:8px;color:var(--text-body);font-size:12px;text-transform:none;letter-spacing:0.02em;line-height:1.5;">No servers. No cloud. No one watching.<br>Your research stays exactly where it belongs.</span>
+  </div>
   <div class="stat-item"><span class="stat-value">17</span><span class="stat-label">Industries Covered</span></div>
   <div class="stat-item"><span class="stat-value">6</span><span class="stat-label">Top Picks Per Scan</span></div>
-  <div class="stat-item"><span class="stat-value">100<span class="stat-unit">%</span></span><span class="stat-label">Local — Your Data Stays Yours</span></div>
   <div class="stat-item"><span class="stat-value">$0</span><span class="stat-label">To Get Started — Forever Free</span></div>
 </div>
 
@@ -1103,7 +1186,7 @@
 <div class="wrap bordered" aria-labelledby="showcase-title">
   <div class="reveal">
     <span class="section-label">The Interface</span>
-    <h2 class="section-title" id="showcase-title">Built for serious investors.<br>Not traders!</h2>
+    <h2 class="section-title" id="showcase-title">Built for serious<br>investors. Not traders.</h2>
     <p class="section-sub">Clean, fast, and information-dense. Every screen is built around decisions — not noise.</p>
   </div>
   <div class="showcase-grid reveal">
@@ -1249,6 +1332,69 @@
   </div>
 </div>
 
+<!-- PRIVACY / LOCAL-FIRST STATEMENT -->
+<section class="privacy-section" aria-labelledby="privacy-headline">
+  <div class="privacy-inner">
+
+    <span class="privacy-eyebrow">Built Different. By Design.</span>
+
+    <h2 class="privacy-headline" id="privacy-headline">
+      Your machine.<br>Your research.<br><em>Full stop.</em>
+    </h2>
+
+    <p class="privacy-subline">
+      While every other platform is building bigger servers to store more of your data,
+      we went the other direction entirely. Here's what that means for you.
+    </p>
+
+    <div class="privacy-promises">
+
+      <div class="privacy-promise">
+        <span class="privacy-promise-number">01 —</span>
+        <p class="privacy-promise-text">
+          Your research never touches our servers —
+          <strong>because we don't have any.</strong>
+        </p>
+      </div>
+
+      <div class="privacy-promise">
+        <span class="privacy-promise-number">02 —</span>
+        <p class="privacy-promise-text">
+          We don't know how often you use the app, what you scan,
+          or what you do with the results.
+          <strong>Architecturally impossible. Not just policy.</strong>
+        </p>
+      </div>
+
+      <div class="privacy-promise">
+        <span class="privacy-promise-number">03 —</span>
+        <p class="privacy-promise-text">
+          When you cancel, there's nothing to delete —
+          <strong>because we never held anything.</strong>
+          No data requests. No breach notifications. No exposure.
+        </p>
+      </div>
+
+      <div class="privacy-promise">
+        <span class="privacy-promise-number">04 —</span>
+        <p class="privacy-promise-text">
+          Your financial curiosity is yours.
+          <strong>We built it that way on purpose.</strong>
+          What you research, what you consider, what you decide —
+          none of it is anyone's business but yours.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="privacy-closing">
+      <strong>This isn't a privacy policy. It's an architecture decision.</strong>
+      Bloomberg knows what you search. We never will.
+    </div>
+
+  </div>
+</section>
+
 <!-- PRICING -->
 <div class="wrap bordered" id="pricing" aria-labelledby="pricing-title">
   <div class="reveal">
@@ -1276,7 +1422,7 @@
         <li class="locked">AI Chat</li>
         <li class="locked">Alerts &amp; Portfolio</li>
       </ul>
-      <a href="https://github.com/San-Dom/wealthgen-site/releases/download/v3.1/WealthGenCore_Beta_v3.1_20260330.zip" class="pricing-btn" aria-label="Download free — no credit card required">⬇ Download Free</a>
+      <a href="https://buy.stripe.com/dRmfZgdE7bUBbNA7mY0kE03" class="pricing-btn" aria-label="Get started free" target="_blank" rel="noopener noreferrer">⬇ Get Started Free</a>
     </article>
 
     <article class="pricing-card" role="listitem">
